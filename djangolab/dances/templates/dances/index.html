@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/dances/">Main Page</a></li>
+            <li><a href="/dances/create/">Add Dancer</a></li>
+            <li><a href="/dances/createdance/">Add Dance</a></li>
+          </ul>
+    </nav>
+    <h1>{{title}}</h1>
+    {% for i in queryset %}
+        <div>
+            <a href=" {{ i.get_absolute_url }}"> <h2> {{i.name}} </h2> </a>
+            <p> {{i.description}} </p>
+        </div>
+    {% endfor %}
+</body>
+</html>

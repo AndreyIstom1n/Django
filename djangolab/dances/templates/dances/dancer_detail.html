@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{instance.room_number}}</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/dances/">Main Page</a></li>
+        <li><a href="/dances/create/">Add Dancer</a></li>
+        <li><a href="/dances/createdance/">Add Dance</a></li>
+      </ul>
+    <h1> {{instance.name}} </h1>
+    <div>
+        <p> {{instance.description}}</p>
+        <p>Name: {{instance.name}}</p>
+        <p>Surname: {{instance.surname}}</p>
+        <p>Contact: {{instance.contact}}</p>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <a href="{{ instance.get_absolute_url }}update">
+            Update
+        </a>
+    </form>
+</body>
+</html>
